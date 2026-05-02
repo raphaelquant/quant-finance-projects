@@ -94,7 +94,7 @@ fig.suptitle(
 
 # --- Graphique 1 : Trajectoires de prix ---
 # On affiche seulement 200 trajectoires pour la lisibilite
-axes[0].plot(prix[:, :200], alpha=0.05, color="#185FA5", linewidth=0.5)
+axes[0].plot(prix[:, :5000], alpha=0.05, color="#185FA5", linewidth=0.5)
 axes[0].axhline(y=S0, color="black", linewidth=1.2,
                 linestyle="--", label=f"Prix initial S0={S0}")
 axes[0].axhline(y=VaR_MC, color="red", linewidth=1.5,
