@@ -21,6 +21,19 @@ def calculer_day_one_pnl(prix_transaction, juste_valeur, part_observable):
         'pnl_immediat'   : part reconnue immédiatement en résultat
         'reserve'        : part différée (non-observable)
     """
+    # Validation 1 — tu l'as déjà écrite
+    if not (0 <= part_observable <= 1):
+        raise ValueError('verifier bien les valeurs svp')
+
+# Validation 2 — prix_transaction positif
+# même structure que validation 1
+    if prix_transaction < 0:
+              raise ValueError('verifier les valeurs svp')
+
+# Validation 3 — juste_valeur positive
+# même structure
+    if juste_valeur < 0:
+            raise ValueError('verifier les valeurs svp')
     
     # ÉTAPE 1 — Calcule le PnL total
     # (c'est la différence entre quoi et quoi ?)
@@ -117,10 +130,4 @@ def afficher_rapport(prix_transaction, juste_valeur,
         )
 
     print("=" * 50)   
-if __name__ == "__main__":
-    afficher_rapport(
-        prix_transaction = 1_000_000,
-        juste_valeur     =   940_000,
-        part_observable  =       0.6,
-        duree_vie        =         4
-    )     
+     
